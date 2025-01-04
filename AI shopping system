@@ -1,0 +1,23 @@
+# Product ratings categorization
+ = [
+    {"name": "Laptop", "ratings": [4, 5, 3, 4]},
+    {"name": "Smartphone", "ratings": [5, 5, 4]},
+    {"name": "Tablet", "ratings": [3, 2, 3, 2]},
+]
+
+good_ratings = []
+poor_ratings = []
+
+# Threshold for good ratings
+rating_threshold = 4
+
+# Loop through each product
+for product in products:
+    for rating in product["ratings"]:
+        if rating >= rating_threshold:
+            good_ratings.append((product["name"], rating))
+        else:
+            poor_ratings.append((product["name"], rating))
+
+print("Good Ratings:", good_ratings)
+print("Poor Ratings:", poor_ratings)
